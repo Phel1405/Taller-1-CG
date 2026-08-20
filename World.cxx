@@ -4,6 +4,7 @@
 
 #include "World.h"
 
+#include "Clock.h"  
 #include "Object.h"
 #include <GL/gl.h>
 
@@ -61,6 +62,11 @@ Draw( )
   glClear( GL_COLOR_BUFFER_BIT );
   glMatrixMode( GL_MODELVIEW );
   glLoadIdentity( );
+
+  if ( is_day() )
+    glClearColor( 0.5, 0.5, 1.0, 1 );
+  else
+    glClearColor( 0.0, 0.0, 0.2, 1 );
 
   if( this->Root != nullptr )
     this->Root->Draw( );

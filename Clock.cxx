@@ -8,12 +8,21 @@
 #include <ctime>
 
 // -------------------------------------------------------------------------
+bool is_day() {
+  auto now = std::chrono::system_clock::now();
+  std::time_t current_time = std::chrono::system_clock::to_time_t(now);
+  std::tm *local_time = std::localtime(&current_time);
+  int h = local_time->tm_hour;
+  return (h >= 6 && h < 18);
+}
+
 float get_hour() {
   auto now = std::chrono::system_clock::now();
   std::time_t current_time = std::chrono::system_clock::to_time_t(now);
   std::tm *local_time = std::localtime(&current_time);
   return (float(360 - (30 * (local_time->tm_hour % 12))));
 }
+
 
 // -------------------------------------------------------------------------
 float get_minute() {
