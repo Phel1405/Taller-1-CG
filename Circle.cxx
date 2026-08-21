@@ -8,8 +8,8 @@
 
 // -------------------------------------------------------------------------
 Circle::
-Circle( unsigned int s )
-  : Object( )
+Circle( int dm, unsigned int s )
+  : Object( dm )
 {
   float _2pi = std::atan( float( 1 ) ) * float( 8 );
   for( unsigned int i = 0; i < s; ++i )

@@ -10,7 +10,7 @@
  */
 class Object {
 public:
-  Object();
+  Object( int dm );
   virtual ~Object();
 
   void SetColor(float r, float g, float b);
@@ -21,6 +21,8 @@ protected:
   float Color[3]{1, 1, 1};
   std::vector<float> Points;
   std::vector<Object *> Children;
+
+  int DrawMode{ 0 };
 };
 
 #endif // __pujOpenGL__Object__h__

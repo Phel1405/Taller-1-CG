@@ -22,17 +22,20 @@ int main( int argc, char** argv )
   Hand* seconds = new Hand( 19, get_second );
   Hand* minutes = new Hand( 15, get_minute );
   Hand* hour = new Hand( 10, get_hour );
-  Body* body = new Body( 20, 100 );
+  Body* body1 = new Body( 20, 100 );
+  Body* body2 = new Body( 19.5, 100 );
 
-  body->SetColor( 1, 0, 1 );
+  body1->SetColor( 0.13, 0.03, 0.01 );
+  body2->SetColor( 0.67, 0.67, 0.67 );
   hour->SetColor( 0, 0, 1 );
   minutes->SetColor( 0, 1, 0 );
   seconds->SetColor( 1, 0, 0 );
 
-  body->AddChild( hour );
-  body->AddChild( minutes );
-  body->AddChild( seconds );
-  clockWorld.Root = body;
+  body1->AddChild( body2 );
+  body2->AddChild( hour );
+  body2->AddChild( minutes );
+  body2->AddChild( seconds );
+  clockWorld.Root = body1;
 
   // Callbacks
   glutDisplayFunc( cb_draw );

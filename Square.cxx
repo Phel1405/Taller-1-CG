@@ -6,8 +6,8 @@
 
 // -------------------------------------------------------------------------
 Square::
-Square( )
-  : Object( )
+Square( int dm )
+  : Object( dm )
 {
   this->Points.push_back( -0.5 );
   this->Points.push_back( -0.5 );

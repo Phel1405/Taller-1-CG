@@ -18,6 +18,9 @@ public:
   virtual void Resize( int w, int h );
   virtual void Draw( );
 
+  bool day { true };
+  void draw_time( );
+
 public:
   int WindowId;
   int Width;

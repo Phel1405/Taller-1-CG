@@ -12,7 +12,7 @@ class Square
   : public Object
 {
 public:
-  Square( );
+  Square( int dm );
   virtual ~Square( ) override;
 };
 

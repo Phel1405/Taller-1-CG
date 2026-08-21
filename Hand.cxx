@@ -10,7 +10,7 @@
 // -------------------------------------------------------------------------
 Hand::
 Hand( float length, std::function< float( ) > f )
-  : Square( ),
+  : Square( GL_LINE_LOOP ),
     Length( length / std::sqrt( float( 2 ) ) ),
     Function( f )
 {

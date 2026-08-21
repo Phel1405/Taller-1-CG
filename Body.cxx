@@ -8,7 +8,7 @@
 // -------------------------------------------------------------------------
 Body::
 Body( float r, unsigned int s )
-  : Circle( s ),
+  : Circle( GL_POLYGON, s ),
     Radius( r )
 {
 }

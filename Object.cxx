@@ -8,7 +8,8 @@
 
 // -------------------------------------------------------------------------
 Object::
-Object( )
+Object( int dm )
+  : DrawMode( dm )
 {
 }
 
@@ -43,7 +44,8 @@ void Object::
 Draw( )
 {
   glColor3fv( this->Color );
-  glBegin( GL_LINE_LOOP );
+  //glBegin( GL_LINE_LOOP );
+  glBegin( this->DrawMode );
   {
     for( unsigned int i = 0; i < this->Points.size( ); i += 2 )
       glVertex2f( this->Points[ i ], this->Points[ i + 1 ] );

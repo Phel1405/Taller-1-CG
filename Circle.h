@@ -12,7 +12,7 @@ class Circle
   : public Object
 {
 public:
-  Circle( unsigned int s = 10 );
+  Circle( int dm, unsigned int s = 10 );
   virtual ~Circle( ) override;
 };
 
