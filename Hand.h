@@ -30,8 +30,8 @@ protected:
   std::function< float( ) > Function { []( ) -> int { return( 0 ); } };
 
   // para centro en punta de manecilla
-  Object* tip { nullptr };
-  float tipRPM { 0 };
+  Object* Tip { nullptr };
+  float TipRPM { 0 };
 };
 
 #endif // __pujOpenGL__Hand__h__

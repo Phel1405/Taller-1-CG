@@ -11,6 +11,8 @@
 #include "Clock.h"
 #include "Hand.h"
 #include "World.h"
+#include "Triangle.h"
+#include "Hexagon.h"
 
 int main( int argc, char** argv )
 {
@@ -36,6 +38,14 @@ int main( int argc, char** argv )
   body2->AddChild( minutes );
   body2->AddChild( seconds );
   clockWorld.Root = body1;
+
+  Triangle* secondsTip = new Triangle( 2.0f );
+  secondsTip->SetColor( 1, 1, 0 );
+  seconds->SetTip( secondsTip, seconds->GetLength( ) * 2 );
+
+  Hexagon* hourTip = new Hexagon( 1.5f );
+  hourTip->SetColor( 0, 1, 1 );
+  hour->SetTip( hourTip, hour->GetLength( ) * 2.0f );
 
   // Callbacks
   glutDisplayFunc( cb_draw );

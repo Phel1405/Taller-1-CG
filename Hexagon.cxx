@@ -1,19 +1,19 @@
-#include "Triangle.h"
+#include "Hexagon.h"
 #include "GL/gl.h"
 
-Triangle::
-Triangle( float r, unsigned int s )
+Hexagon::
+Hexagon( float r, unsigned int s )
   : Circle( GL_LINE_LOOP, s ),
     Radius( r )
 {
 }
 
-Triangle::
-~Triangle( )
+Hexagon::
+~Hexagon( )
 {
 }
 
-void Triangle::
+void Hexagon::
 Draw( )
 {
   glScalef( this->Radius, this->Radius, 1 );
@@ -21,4 +21,4 @@ Draw( )
 }
 
 
-// eof - Triangle.cxx
+// eof - Hexagon.cxx
