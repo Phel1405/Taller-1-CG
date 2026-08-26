@@ -13,6 +13,7 @@
 #include "World.h"
 #include "Triangle.h"
 #include "Hexagon.h"
+#include "Star.h"
 
 int main( int argc, char** argv )
 {
@@ -41,11 +42,15 @@ int main( int argc, char** argv )
 
   Triangle* secondsTip = new Triangle( 2.0f );
   secondsTip->SetColor( 1, 1, 0 );
-  seconds->SetTip( secondsTip, seconds->GetLength( ) * 2 );
+  seconds->SetTip( secondsTip, seconds->GetLength( ) * 2.0 );
 
   Hexagon* hourTip = new Hexagon( 1.5f );
   hourTip->SetColor( 0, 1, 1 );
-  hour->SetTip( hourTip, hour->GetLength( ) * 2.0f );
+  hour->SetTip( hourTip, hour->GetLength( ) * 2.0 );
+
+  Star* minutesTip = new Star( 1.5f );
+  minutesTip->SetColor( 1, 0, 1 );
+  minutes->SetTip( minutesTip, minutes->GetLength( ) * 2.0 );
 
   // Callbacks
   glutDisplayFunc( cb_draw );
