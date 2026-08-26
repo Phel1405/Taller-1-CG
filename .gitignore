@@ -1,5 +1,2 @@
-# Objetos compilados
 *.o
-# Ejecutable
 ClockGLApp
-
