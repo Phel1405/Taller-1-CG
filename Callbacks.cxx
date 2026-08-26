@@ -5,6 +5,7 @@
 #include "Callbacks.h"
 #include "App.h"
 
+#include <GL/freeglut_std.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
 #include <iostream>
@@ -26,14 +27,13 @@ void cb_resize(int w, int h) {
 
 // -------------------------------------------------------------------------
 void cb_keyboard(unsigned char k, int x, int y) {
-  std::cout << "key: " << int( k ) << std::endl;
+  std::cout << "key: " << int(k) << std::endl;
 
   if (k == 27)
     std::exit(1);
   else if (k == ' ') {
     glClearColor(0, 1, 1, 1);
   }
-
 
   // SWICTCH DAY / NIGHT
   if (k == 49) {
@@ -42,6 +42,14 @@ void cb_keyboard(unsigned char k, int x, int y) {
   }
   if (k == 50) {
     clockWorld.day = false;
+    glutPostRedisplay();
+  }
+
+  if (k == '+') {
+    clockWorld.Zoom(0.9f);
+    glutPostRedisplay();
+  } else if (k == '-') {
+    clockWorld.Zoom(1.1f);
     glutPostRedisplay();
   }
 }
