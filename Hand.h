@@ -7,6 +7,7 @@
 #include <functional>
 
 #include "Square.h"
+#include "Object.h"
 
 /**
  */
@@ -19,9 +20,18 @@ public:
 
   virtual void Draw( ) override;
 
+  // para centro en punta de manecilla
+  float GetLength( ) const;
+  void SetTip( Object* tip, float rpm );
+
+
 protected:
   float Length { 1 };
   std::function< float( ) > Function { []( ) -> int { return( 0 ); } };
+
+  // para centro en punta de manecilla
+  Object* tip { nullptr };
+  float tipRPM { 0 };
 };
 
 #endif // __pujOpenGL__Hand__h__
